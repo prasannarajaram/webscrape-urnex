@@ -1,2 +1,2 @@
 # webscrape-urnex
-Scraping ingredients PDF file from urnex.com/sds
+Scraping ingredients PDF files from urnex.com/sds
