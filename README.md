@@ -10,7 +10,7 @@ Scraping ingredients PDF files from urnex.com/sds
 5. The files will get downloaded to respective directories based on the type.
 
 ## Diagnostics
-1. Use ~download.log~ file to review any abnormalities.
+1. Use `download.log` file to review any abnormalities.
 
 ## Planned improvements
 1. Create an Excel file with category-wise separation to individual downloaded files
