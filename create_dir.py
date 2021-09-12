@@ -1,38 +1,36 @@
 import os
-import pdb
 import requests
-
+import logging
+logging.basicConfig(filename='download.log', encoding='utf-8', level=logging.DEBUG)
 
 def createsubdir(subdir):
     try:
         parent_main = os.getcwd()
         newpath = os.path.join(parent_main, subdir)
-        # pdb.set_trace()
         os.mkdir(newpath)
-        print(f'{newpath} created')
+        logging.info('%s created', newpath)
         os.chdir(newpath)
-        # pdb.set_trace()
     except FileExistsError:
         os.chdir(subdir)
-        print(f"Info: Not creating '{subdir}' directory. It already exists")
+        logging.info("Not creating '%s' directory. It already exists", subdir)
     return(parent_main)
 
 
-def createproddir(subdir):
+def createproddir(proddir):
     try:
         parent = os.getcwd()
-        newpath = os.path.join(parent, subdir)
+        newpath = os.path.join(parent, proddir)
         os.mkdir(newpath)
-        print(f'{newpath} created')
+        logging.info('%s created', newpath)        
     except FileExistsError:
-        print(f"Info: Not creating '{subdir}' directory. It already exists")
+        logging.info("Not creating '%s' directory. It already exists", proddir)        
 
 
 def download_file(parent_main, subdir, proddir, pdf_link):
     newpath = os.path.join(parent_main, subdir, proddir)
     os.chdir(newpath)
     filename = pdf_link.split('/')[-1]
-    print(f'Downloading file to {proddir} {filename}')
+    logging.info("Downloading file to %s %s", proddir, filename)
     response = requests.get(pdf_link)
     pdf = open(filename, 'wb')
     pdf.write(response.content)
