@@ -4,8 +4,10 @@ Scraping ingredients PDF files from urnex.com/sds
 
 ## How to use this
 1. Download (or clone) this repository
-2. Run the urnex_scrape.py file
-3. The script will download all the ingredients (PDF files) to the same directory (107 files, as 06-Sep-2021)
+2. Run the urnex_main.py file
+3. The script will download all the ingredients (PDF files) to the directory under /downloads
+4. The /downloads has 6 different directories based on the number of types available (as on 12-Sep-2021)
+5. The files will get downloaded to respective directories based on the type.
 
 ## Planned improvements
 1. Download product category into seperate folders
